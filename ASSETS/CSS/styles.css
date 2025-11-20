@@ -220,39 +220,9 @@ footer {
 
 /* Instrucción: Define al menos dos media queries para ajustar la visualización en tablet y escritorio - Media Query 1: Tablet */
 @media (min-width: 768px) {
-  /* Instrucción: Utiliza CSS Grid para estructurar secciones (ej.: contenido + barra lateral) */
-  body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "section"
-      "aside"
-      "footer";
-  }
-
-  header {
-    grid-area: header;
-  }
-
-  /* CORRECCIÓN: Mantener flex-direction: column para orden vertical */
-  section {
-    grid-area: section;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
   /* CORRECCIÓN: Artículos ocupan 100% del ancho para apilarse verticalmente */
   article {
     flex: 1 1 100%;
-  }
-
-  aside {
-    grid-area: aside;
-  }
-
-  footer {
-    grid-area: footer;
   }
 
   img {
@@ -262,42 +232,16 @@ footer {
 
 /* Instrucción: Define al menos dos media queries para ajustar la visualización en tablet y escritorio - Media Query 2: Desktop */
 @media (min-width: 1024px) {
-  /* Instrucción: Utiliza CSS Grid para estructurar secciones (ej.: contenido + barra lateral) - Grid completo con aside */
-  /* MODIFICACIÓN 2: Se movió el aside dentro del section en el HTML, directamente bajo la imagen.
-     RAZÓN: Para que "Datos Interesantes" aparezca justo debajo de la imagen y antes de los artículos.
-     SOLUCIÓN: Ya no necesitamos grid-area para aside porque ahora es parte del flujo normal dentro de section. */
-  body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "section"
-      "footer";
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  header {
-    grid-area: header;
-  }
-
-  section {
-    grid-area: section;
-    flex-direction: column;
-  }
-
   article {
     flex: 1 1 100%;
   }
 
-  /* MODIFICACIÓN: El aside ahora está dentro de section en el HTML, así aparece bajo la imagen */
   aside {
     max-width: 800px;
     margin: 1rem auto;
   }
 
   footer {
-    grid-area: footer;
     flex-direction: row;
     justify-content: space-around;
   }
