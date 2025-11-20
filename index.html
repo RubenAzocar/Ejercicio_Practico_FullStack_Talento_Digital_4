@@ -30,23 +30,32 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#secciones">Secciones</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Secciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#resumen">El Estado Actual de la Inteligencia Artificial (AI) en 2025</a></li>
+              <li><a class="dropdown-item" href="#conceptos-basicos">Definición y Conceptos Básicos</a></li>
+              <li><a class="dropdown-item" href="#aplicaciones">Aplicaciones en la Vida Cotidiana</a></li>
+              <li><a class="dropdown-item" href="#datos-interesantes">Datos Interesantes</a></li>
+              <li><a class="dropdown-item" href="#futuro">Impacto Social y Económico</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#resumen">Resumen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link" href="#contacto">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header>
+  <header id="inicio">
     <!-- Define el encabezado de la página con el contenido introductorio -->
     <h1>Inteligencia Artificial (Artificial Intelligence - AI)</h1>
     <!-- Título principal de nivel 1, el más importante de la página -->
@@ -151,9 +160,15 @@
         <li><strong>Enfoque Futuro:</strong> La cuestión central es utilizar la IA de manera responsable y ética para construir un futuro mejor.</li>
       </ul>
     </article>
+
+    <!-- ARTÍCULO 4: Resumen -->
+    <article>
+      <h3>Resumen</h3>
+      <p>La Inteligencia Artificial (IA) es la rama de la informática que desarrolla sistemas capaces de simular tareas que requieren inteligencia humana, como aprender de la experiencia y ajustarse a nuevas entradas. En 2025, la IA es una realidad que impulsa la innovación global. Los avances clave incluyen la IA Generativa (creación de contenido con modelos como Gemini y GPT-4), la Automatización Inteligente y la Medicina Personalizada. La IA está presente en aplicaciones cotidianas como asistentes virtuales (Siri, Alexa), recomendaciones en plataformas de streaming y diagnósticos médicos asistidos. Su impacto es significativo, creando millones de empleos y optimizando procesos empresariales. Sin embargo, plantea desafíos importantes en temas de privacidad y sesgos algorítmicos. El futuro se centra en el uso responsable y ético de esta tecnología transformadora.</p>
+    </article>
   </section>
 
-  <footer>
+  <footer id="contacto">
     <!-- Define el pie de página con información de cierre -->
     <p>&copy; 2025 Tecnología e Innovación. Todos los derechos reservados.</p>
     <p>Contacto: info@tecnologia-ia.com</p>
