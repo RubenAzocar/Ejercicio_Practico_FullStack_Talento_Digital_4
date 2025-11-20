@@ -81,6 +81,101 @@ p {
   max-width: 100%;
 }
 
+/* Estilos para la sección de Resumen */
+.resumen-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.resumen-section h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.resumen-section h3 {
+  color: #667eea;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resumen-section article {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+}
+
+/* Estilos para tablas responsive */
+table {
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  table {
+    display: table;
+  }
+}
+
+.resumen-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.resumen-section li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Estilos para la sección de Secciones (índice) */
+.secciones-section {
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.secciones-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.secciones-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.secciones-lista li {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: white;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.secciones-lista li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.secciones-lista a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.secciones-lista a:hover {
+  color: #667eea;
+}
+
+/* Scroll suave para navegación interna */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ORDEN VERTICAL: Contenedor para imagen + aside en Opción B */
 .image-aside-container {
   display: flex;
