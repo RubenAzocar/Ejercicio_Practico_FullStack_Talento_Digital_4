@@ -1,454 +1,699 @@
-/* Hoja de estilos - Inteligencia Artificial */
+/* ========================================
+   HOJA DE ESTILOS - INTELIGENCIA ARTIFICIAL
+   Diseño Responsivo con Bootstrap
 
-/* Reset básico */
+   Este archivo contiene todos los estilos CSS para el proyecto
+   de Inteligencia Artificial con diseño responsive (Mobile First)
+   ======================================== */
+
+/* ========================================
+   RESET Y CONFIGURACIÓN BÁSICA
+   ======================================== */
+/*
+   Selector universal: Resetea los estilos por defecto del navegador
+   para tener control completo sobre el diseño
+*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                      /* Elimina todos los márgenes externos */
+  padding: 0;                     /* Elimina todos los rellenos internos */
+  box-sizing: border-box;         /* Incluye padding y border en el cálculo de ancho/alto */
 }
 
-/* Diseño Mobile First */
+/*
+   Configuración del elemento HTML para scroll suave
+*/
+html {
+  scroll-behavior: smooth;        /* Animación suave al hacer scroll entre secciones */
+  scroll-padding-top: 80px;       /* Espacio superior al hacer scroll (compensa altura del navbar fijo) */
+}
+
+/* ========================================
+   ESTILOS BASE - MOBILE FIRST
+   ======================================== */
+/*
+   Estilos del body - Enfoque Mobile First
+   Define la apariencia general de toda la página con diseño moderno
+*/
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.8;
-  color: #e0e0e0;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-  overflow-x: hidden;
-  max-width: 100vw;
-  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+  line-height: 1.8;               /* Altura de línea aumentada para mejor legibilidad */
+  color: #e0e0e0;                 /* Color de texto gris claro para tema oscuro */
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); /* Degradado oscuro diagonal */
+  overflow-x: hidden;             /* Oculta scroll horizontal no deseado */
+  max-width: 100vw;               /* Ancho máximo igual al viewport width */
+  min-height: 100vh;              /* Altura mínima de toda la altura de la pantalla */
 }
 
-/* Títulos */
-h1 {
-  color: #00f2fe;
-  font-size: 2.5rem;
-  font-weight: 800;
-  word-wrap: break-word;
-  max-width: 100%;
-  text-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
-}
-
-h2 {
-  color: #00f2fe;
-  font-size: 2rem;
-  font-weight: 700;
-  word-wrap: break-word;
-  max-width: 100%;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
-  letter-spacing: 1px;
-}
-
-h3 {
-  color: #4facfe;
-  font-size: 1.5rem;
-  font-weight: 600;
-  word-wrap: break-word;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
-}
-
-/* Header */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  max-width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  margin-bottom: 2rem;
-}
-
-header p {
-  color: #b0e0e6;
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  font-weight: 300;
-}
-
-/* Secciones */
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Artículos con efecto glassmorphism */
-article {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  max-width: 100%;
-  word-wrap: break-word;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.2);
-  border-color: rgba(0, 242, 254, 0.3);
-}
-
-/* Párrafos */
+/*
+   Estilos para párrafos - Optimizados para lectura en móviles
+*/
 p {
-  word-wrap: break-word;
-  max-width: 100%;
-  color: #d0d0d0;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
+  word-wrap: break-word;          /* Rompe palabras largas si es necesario */
+  max-width: 100%;                /* Evita desbordamiento horizontal */
+  color: #d0d0d0;                 /* Color gris claro para texto regular */
+  font-size: 1.05rem;             /* Tamaño ligeramente mayor para mejor lectura */
+  line-height: 1.8;               /* Espaciado generoso entre líneas */
+  margin-bottom: 1rem;            /* Espacio inferior entre párrafos */
 }
 
-/* Listas */
+/* ========================================
+   TIPOGRAFÍA
+   ======================================== */
+/*
+   Título H1 - Nivel 1 (Título principal de la página)
+   Diseñado con efecto de texto brillante (text-shadow)
+*/
+h1 {
+  color: #00f2fe;                 /* Color cyan brillante para destacar */
+  font-size: 2.5rem;              /* Tamaño grande para móviles (40px) */
+  font-weight: 800;               /* Peso extra bold para máximo impacto */
+  word-wrap: break-word;          /* Ajusta palabras largas */
+  max-width: 100%;                /* Evita desbordamiento */
+  text-shadow: 0 2px 10px rgba(0, 242, 254, 0.3); /* Efecto de brillo cyan suave */
+}
+
+/*
+   Título H2 - Nivel 2 (Subtítulos de secciones)
+   Mantiene coherencia visual con H1
+*/
+h2 {
+  color: #00f2fe;                 /* Mismo color cyan que H1 */
+  font-size: 2rem;                /* Ligeramente más pequeño que H1 (32px) */
+  font-weight: 700;               /* Peso bold */
+  word-wrap: break-word;          /* Ajusta palabras largas */
+  max-width: 100%;                /* Evita desbordamiento */
+  margin-bottom: 1.5rem;          /* Espacio inferior para separar del contenido */
+  text-shadow: 0 2px 10px rgba(0, 242, 254, 0.3); /* Mismo efecto brillante */
+  letter-spacing: 1px;            /* Espaciado entre letras para mejor legibilidad */
+}
+
+/*
+   Título H3 - Nivel 3 (Sub-subtítulos)
+   Color diferente para jerarquía visual
+*/
+h3 {
+  color: #4facfe;                 /* Cyan más claro para diferenciar jerarquía */
+  font-size: 1.5rem;              /* Tamaño intermedio (24px) */
+  font-weight: 600;               /* Peso semi-bold */
+  word-wrap: break-word;          /* Ajusta palabras largas */
+  max-width: 100%;                /* Evita desbordamiento */
+  margin-bottom: 1rem;            /* Espacio inferior */
+  letter-spacing: 0.5px;          /* Ligero espaciado entre letras */
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+/*
+   Encabezado principal de la página
+   Utiliza efecto glassmorphism (cristal esmerilado)
+*/
+header {
+  display: flex;                  /* Flexbox para alineación */
+  flex-direction: column;         /* Elementos apilados verticalmente */
+  align-items: center;            /* Centra horizontalmente los elementos */
+  padding: 3rem 1.5rem;           /* Relleno generoso (48px arriba/abajo, 24px lados) */
+  text-align: center;             /* Centra el texto */
+  max-width: 100%;                /* Ocupa todo el ancho disponible */
+  background: rgba(255, 255, 255, 0.05); /* Fondo blanco semi-transparente (5%) */
+  backdrop-filter: blur(10px);    /* Efecto de desenfoque del fondo (glassmorphism) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde inferior sutil */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Sombra oscura para profundidad */
+  margin-bottom: 2rem;            /* Espacio inferior (32px) */
+}
+
+/*
+   Párrafos dentro del header
+   Estilo diferenciado del texto regular
+*/
+header p {
+  color: #b0e0e6;                 /* Color azul pálido */
+  font-size: 1.1rem;              /* Tamaño ligeramente mayor (17.6px) */
+  margin-top: 1rem;               /* Espacio superior (16px) */
+  font-weight: 300;               /* Peso ligero para contraste */
+}
+
+/* ========================================
+   SECCIONES Y ARTÍCULOS
+   ======================================== */
+/*
+   Contenedor principal de secciones
+   Diseño flexible para contenido organizado
+*/
+section {
+  display: flex;                  /* Flexbox para organización */
+  flex-direction: column;         /* Elementos apilados verticalmente */
+  gap: 2rem;                      /* Espacio entre elementos hijos (32px) */
+  padding: 2rem 1.5rem;           /* Relleno (32px vertical, 24px horizontal) */
+  max-width: 1400px;              /* Ancho máximo para pantallas grandes */
+  margin: 0 auto;                 /* Centra la sección horizontalmente */
+}
+
+/*
+   Artículos con efecto glassmorphism
+   Contenedores de contenido con estilo moderno
+*/
+article {
+  display: flex;                  /* Flexbox para layout interno */
+  flex-direction: column;         /* Contenido apilado verticalmente */
+  padding: 2rem;                  /* Relleno interno generoso (32px) */
+  background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente (8%) */
+  backdrop-filter: blur(10px);    /* Efecto glassmorphism */
+  border-radius: 20px;            /* Esquinas muy redondeadas */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  max-width: 100%;                /* Evita desbordamiento */
+  word-wrap: break-word;          /* Ajusta palabras largas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave al hover */
+}
+
+/*
+   Efecto hover en artículos
+   Elevación visual al pasar el mouse
+*/
+article:hover {
+  transform: translateY(-5px);    /* Mueve hacia arriba 5px */
+  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.2); /* Sombra cyan más pronunciada */
+  border-color: rgba(0, 242, 254, 0.3); /* Borde cyan más visible */
+}
+
+/*
+   Elemento aside - Contenido complementario
+   Diseño similar a los artículos para consistencia
+*/
+aside {
+  padding: 2rem;                  /* Relleno interno (32px) */
+  background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente */
+  backdrop-filter: blur(10px);    /* Efecto glassmorphism */
+  border-radius: 20px;            /* Esquinas redondeadas */
+  border: 1px solid rgba(0, 242, 254, 0.2); /* Borde cyan sutil */
+  max-width: 100%;                /* Ancho flexible */
+  width: 100%;                    /* Ocupa todo el ancho disponible */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+}
+
+/*
+   Títulos H3 dentro de aside
+   Color destacado para diferenciación
+*/
+aside h3 {
+  color: #00f2fe;                 /* Color cyan brillante */
+  margin-bottom: 1.5rem;          /* Espacio inferior (24px) */
+}
+
+/* ========================================
+   LISTAS
+   ======================================== */
+/*
+   Listas sin viñetas por defecto
+   Estilo personalizado con pseudo-elemento
+*/
 ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: none;               /* Elimina viñetas predeterminadas */
+  padding-left: 0;                /* Sin sangría izquierda */
 }
 
+/*
+   Elementos de lista personalizados
+   Con icono personalizado y efecto hover
+*/
 ul li {
-  padding: 0.75rem 0 0.75rem 2rem;
-  position: relative;
-  color: #d0d0d0;
-  transition: color 0.3s ease;
+  padding: 0.75rem 0 0.75rem 2rem; /* Relleno: 12px arriba/abajo, 32px izquierda */
+  position: relative;             /* Posicionamiento para pseudo-elemento */
+  color: #d0d0d0;                 /* Color gris claro */
+  transition: color 0.3s ease;    /* Transición suave de color */
 }
 
+/*
+   Pseudo-elemento ::before para icono personalizado
+   Crea un símbolo de flecha antes de cada item
+*/
 ul li:before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: #00f2fe;
-  font-size: 1.5rem;
-  font-weight: bold;
+  content: "▸";                   /* Símbolo de flecha hacia la derecha */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: 0;                        /* Alineado a la izquierda */
+  color: #00f2fe;                 /* Color cyan brillante */
+  font-size: 1.5rem;              /* Tamaño grande (24px) */
+  font-weight: bold;              /* Peso bold */
 }
 
+/*
+   Efecto hover en items de lista
+   Cambia color al pasar el mouse
+*/
 ul li:hover {
-  color: #00f2fe;
+  color: #00f2fe;                 /* Cambia a cyan al hover */
 }
 
-/* Cards de Bootstrap */
+/*
+   Sección especial de índice/navegación
+   Diseño destacado con gradiente
+*/
+.secciones-section {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.1) 100%); /* Gradiente cyan */
+  padding: 3rem 2rem;             /* Relleno generoso (48px vertical, 32px horizontal) */
+  margin-bottom: 2rem;            /* Espacio inferior (32px) */
+  border-radius: 20px;            /* Esquinas muy redondeadas */
+  border: 1px solid rgba(0, 242, 254, 0.2); /* Borde cyan sutil */
+}
+
+/*
+   Oculta H2 dentro de sección de índice
+   Puede ser usado para SEO pero no visible
+*/
+.secciones-section h2 {
+  display: none;                  /* No se muestra visualmente */
+}
+
+/*
+   H3 dentro de sección de índice
+   Título centrado destacado
+*/
+.secciones-section h3 {
+  text-align: center;             /* Centra el texto */
+  margin-bottom: 2rem;            /* Espacio inferior (32px) */
+  font-size: 1.8rem;              /* Tamaño grande (28.8px) */
+}
+
+/*
+   Lista especial para el índice de secciones
+   Sin estilo de lista por defecto
+*/
+.secciones-lista {
+  list-style: none;               /* Sin viñetas */
+  padding: 0;                     /* Sin padding */
+}
+
+/*
+   Items de la lista de secciones
+   Diseño tipo card con borde lateral destacado
+*/
+.secciones-lista li {
+  margin-bottom: 1.5rem;          /* Espacio entre items (24px) */
+  padding: 1.2rem 1.5rem;         /* Relleno interno (19.2px vertical, 24px horizontal) */
+  background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente */
+  border-left: 5px solid #00f2fe; /* Borde izquierdo cyan grueso */
+  border-radius: 12px;            /* Esquinas redondeadas */
+  transition: transform 0.3s ease, background 0.3s ease; /* Animación suave */
+  backdrop-filter: blur(5px);     /* Efecto glassmorphism ligero */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+/*
+   Efecto hover en items del índice
+   Movimiento horizontal y cambio de fondo
+*/
+.secciones-lista li:hover {
+  transform: translateX(10px);    /* Desplaza 10px a la derecha */
+  background: rgba(0, 242, 254, 0.15); /* Fondo cyan más visible */
+}
+
+/* ========================================
+   CARDS DE BOOTSTRAP
+   ======================================== */
+/*
+   Cards personalizados con glassmorphism
+   Sobrescribe estilos de Bootstrap
+*/
 .card {
-  max-width: 100%;
-  margin: 2rem auto;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 242, 254, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;                /* Ancho máximo completo */
+  margin: 2rem auto;              /* Margen vertical (32px) y centrado horizontal */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+  background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente */
+  backdrop-filter: blur(10px);    /* Efecto glassmorphism */
+  border: 1px solid rgba(0, 242, 254, 0.2); /* Borde cyan sutil */
+  border-radius: 20px;            /* Esquinas muy redondeadas */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
+/*
+   Efecto hover en cards
+   Elevación visual dramática
+*/
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 50px rgba(0, 242, 254, 0.3);
-  border-color: rgba(0, 242, 254, 0.5);
+  transform: translateY(-10px);   /* Eleva 10px hacia arriba */
+  box-shadow: 0 15px 50px rgba(0, 242, 254, 0.3); /* Sombra cyan más grande */
+  border-color: rgba(0, 242, 254, 0.5); /* Borde cyan más intenso */
 }
 
+/*
+   Imagen superior del card
+   Tamaño fijo con efecto zoom al hover
+*/
 .card-img-top {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  width: 100%;                    /* Ancho completo del card */
+  height: 280px;                  /* Altura fija en móviles */
+  object-fit: cover;              /* Recorta la imagen manteniendo proporción */
+  transition: transform 0.3s ease; /* Animación suave */
 }
 
+/*
+   Efecto zoom en imagen al hacer hover en el card
+   La imagen crece ligeramente
+*/
 .card:hover .card-img-top {
-  transform: scale(1.05);
+  transform: scale(1.05);         /* Escala al 105% */
 }
 
+/*
+   Cuerpo del card con gradiente
+   Contiene el contenido de texto
+*/
 .card-body {
-  padding: 2rem;
-  background: linear-gradient(180deg, rgba(15, 32, 39, 0.8) 0%, rgba(44, 83, 100, 0.6) 100%);
+  padding: 2rem;                  /* Relleno interno (32px) */
+  background: linear-gradient(180deg, rgba(15, 32, 39, 0.8) 0%, rgba(44, 83, 100, 0.6) 100%); /* Gradiente vertical */
 }
 
+/*
+   Título del card
+   Destacado con efecto de sombra
+*/
 .card-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #00f2fe;
-  text-shadow: 0 2px 8px rgba(0, 242, 254, 0.3);
-  letter-spacing: 0.5px;
+  font-size: 1.4rem;              /* Tamaño grande (22.4px) */
+  font-weight: 700;               /* Peso bold */
+  margin-bottom: 1rem;            /* Espacio inferior (16px) */
+  color: #00f2fe;                 /* Color cyan brillante */
+  text-shadow: 0 2px 8px rgba(0, 242, 254, 0.3); /* Efecto de brillo */
+  letter-spacing: 0.5px;          /* Ligero espaciado entre letras */
 }
 
+/*
+   Texto del card
+   Optimizado para lectura
+*/
 .card-text {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #d0d0d0;
-  word-wrap: break-word;
+  font-size: 1.05rem;             /* Tamaño ligeramente mayor (16.8px) */
+  line-height: 1.7;               /* Altura de línea para legibilidad */
+  color: #d0d0d0;                 /* Color gris claro */
+  word-wrap: break-word;          /* Ajusta palabras largas */
 }
 
-/* Tablas */
+/* ========================================
+   TABLAS
+   ======================================== */
+/*
+   Tablas con diseño moderno
+   Bordes redondeados y efecto glassmorphism
+*/
 table {
-  width: 100%;
-  margin: 2rem 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;                    /* Ancho completo del contenedor */
+  margin: 2rem 0;                 /* Margen vertical (32px) */
+  border-collapse: separate;      /* Permite border-radius */
+  border-spacing: 0;              /* Sin espacio entre celdas */
+  background: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
+  border-radius: 15px;            /* Esquinas redondeadas */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
 }
 
+/*
+   Encabezado de tabla con gradiente
+   Destaca las columnas principales
+*/
 table thead {
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); /* Gradiente cyan */
 }
 
+/*
+   Celdas del encabezado
+   Texto oscuro sobre fondo claro
+*/
 table thead th {
-  padding: 1.2rem;
-  color: #0f2027;
-  font-weight: 700;
-  text-align: left;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  padding: 1.2rem;                /* Relleno generoso (19.2px) */
+  color: #0f2027;                 /* Color oscuro para contraste */
+  font-weight: 700;               /* Peso bold */
+  text-align: left;               /* Alineación izquierda */
+  font-size: 1.1rem;              /* Tamaño ligeramente mayor (17.6px) */
+  letter-spacing: 0.5px;          /* Espaciado entre letras */
 }
 
+/*
+   Filas del cuerpo de la tabla
+   Con borde inferior y efecto hover
+*/
 table tbody tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde inferior sutil */
+  transition: background 0.3s ease; /* Animación suave de fondo */
 }
 
+/*
+   Efecto hover en filas
+   Cambia el fondo al pasar el mouse
+*/
 table tbody tr:hover {
-  background: rgba(0, 242, 254, 0.15);
+  background: rgba(0, 242, 254, 0.15); /* Fondo cyan semi-transparente */
 }
 
+/*
+   Celdas del cuerpo de la tabla
+   Espaciado y tipografía optimizados
+*/
 table tbody td {
-  padding: 1.2rem;
-  color: #d0d0d0;
-  font-size: 1rem;
+  padding: 1.2rem;                /* Relleno (19.2px) */
+  color: #d0d0d0;                 /* Color gris claro */
+  font-size: 1rem;                /* Tamaño estándar (16px) */
 }
 
+/*
+   Primera celda de cada fila
+   Destacada con color y peso diferentes
+*/
 table tbody td:first-child {
-  color: #4facfe;
-  font-weight: 600;
+  color: #4facfe;                 /* Color cyan claro */
+  font-weight: 600;               /* Peso semi-bold */
 }
 
+/*
+   Tablas responsive en móviles
+   Permite scroll horizontal si es necesario
+*/
 @media (max-width: 768px) {
   table {
-    display: block;
-    overflow-x: auto;
+    display: block;               /* Convierte en bloque */
+    overflow-x: auto;             /* Permite scroll horizontal */
   }
 }
 
-/* Sección de índice */
-.secciones-section {
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.1) 100%);
-  padding: 3rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 242, 254, 0.2);
-}
-
-.secciones-section h2 {
-  display: none;
-}
-
-.secciones-section h3 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-}
-
-.secciones-lista {
-  list-style: none;
-  padding: 0;
-}
-
-.secciones-lista li {
-  margin-bottom: 1.5rem;
-  padding: 1.2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 5px solid #00f2fe;
-  border-radius: 12px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.secciones-lista li:hover {
-  transform: translateX(10px);
-  background: rgba(0, 242, 254, 0.15);
-}
-
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-/* Contenedor de imagen y aside */
+/* ========================================
+   IMÁGENES
+   ======================================== */
+/*
+   Contenedor para imagen y aside
+   Layout flexible que cambia con el tamaño de pantalla
+*/
 .image-aside-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  margin: 2rem 0;
-  max-width: 100%;
+  display: flex;                  /* Flexbox para layout */
+  flex-direction: column;         /* Apilado vertical en móviles */
+  align-items: center;            /* Centra los elementos */
+  gap: 2rem;                      /* Espacio entre imagen y aside (32px) */
+  margin: 2rem 0;                 /* Margen vertical (32px) */
+  max-width: 100%;                /* Ancho máximo completo */
 }
 
-/* Imágenes */
+/*
+   Imágenes con diseño responsive
+   Efectos visuales modernos
+*/
 img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(0, 242, 254, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;                    /* Ancho completo del contenedor */
+  max-width: 500px;               /* Ancho máximo en pantallas grandes */
+  height: auto;                   /* Altura automática para mantener proporción */
+  margin: 0 auto;                 /* Centra horizontalmente */
+  display: block;                 /* Elemento de bloque */
+  border-radius: 15px;            /* Esquinas redondeadas */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+  border: 2px solid rgba(0, 242, 254, 0.3); /* Borde cyan sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
+/*
+   Efecto hover en imágenes
+   Zoom ligero y sombra más pronunciada
+*/
 img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 50px rgba(0, 242, 254, 0.3);
+  transform: scale(1.05);         /* Escala al 105% */
+  box-shadow: 0 15px 50px rgba(0, 242, 254, 0.3); /* Sombra cyan brillante */
 }
 
-/* Aside */
-aside {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(0, 242, 254, 0.2);
-  max-width: 100%;
-  width: 100%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-aside h3 {
-  color: #00f2fe;
-  margin-bottom: 1.5rem;
-}
-
-/* Footer */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 2rem;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(15, 32, 39, 0.95) 0%, #0f2027 100%);
-  color: #b0e0e6;
-  max-width: 100%;
-  margin-top: 4rem;
-  border-top: 2px solid rgba(0, 242, 254, 0.3);
-  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
-}
-
-footer p {
-  color: #b0e0e6;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-/* Navbar de Bootstrap */
+/* ========================================
+   NAVBAR DE BOOTSTRAP
+   ======================================== */
+/*
+   Navbar personalizado con glassmorphism
+   Sobrescribe estilos de Bootstrap
+*/
 .navbar {
-  background: rgba(15, 32, 39, 0.95) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid rgba(0, 242, 254, 0.3);
-  padding: 1rem 2rem;
+  background: rgba(15, 32, 39, 0.95) !important; /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(10px);    /* Efecto glassmorphism */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+  border-bottom: 2px solid rgba(0, 242, 254, 0.3); /* Borde inferior cyan */
+  padding: 1rem 2rem;             /* Relleno (16px vertical, 32px horizontal) */
 }
 
+/*
+   Logo/marca de la navbar
+   Texto destacado con efecto brillante
+*/
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #00f2fe !important;
-  text-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
-  transition: color 0.3s ease;
+  font-size: 1.5rem;              /* Tamaño grande (24px) */
+  font-weight: 800;               /* Peso extra bold */
+  color: #00f2fe !important;      /* Color cyan brillante (sobrescribe Bootstrap) */
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.5); /* Efecto de resplandor */
+  transition: color 0.3s ease;    /* Transición suave de color */
 }
 
+/*
+   Efecto hover en la marca
+   Cambio de color sutil
+*/
 .navbar-brand:hover {
-  color: #4facfe !important;
+  color: #4facfe !important;      /* Cyan más claro al hover */
 }
 
+/*
+   Enlaces de navegación
+   Estilo limpio con transiciones
+*/
 .nav-link {
-  color: #b0e0e6 !important;
-  font-weight: 500;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
+  color: #b0e0e6 !important;      /* Color azul pálido (sobrescribe Bootstrap) */
+  font-weight: 500;               /* Peso medio */
+  margin: 0 0.5rem;               /* Margen horizontal (8px) */
+  transition: color 0.3s ease;    /* Transición suave de color */
 }
 
+/*
+   Enlaces activos o con hover
+   Destacados con color cyan
+*/
 .nav-link:hover,
 .nav-link.active {
-  color: #00f2fe !important;
+  color: #00f2fe !important;      /* Cyan brillante */
 }
 
+/*
+   Menú dropdown de Bootstrap
+   Estilo consistente con el navbar
+*/
 .dropdown-menu {
-  background: rgba(15, 32, 39, 0.98) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+  background: rgba(15, 32, 39, 0.98) !important; /* Fondo oscuro casi opaco */
+  backdrop-filter: blur(10px);    /* Efecto glassmorphism */
+  border: 1px solid rgba(0, 242, 254, 0.3); /* Borde cyan */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra profunda */
+  border-radius: 10px;            /* Esquinas redondeadas */
 }
 
+/*
+   Items del menú dropdown
+   Con efecto hover
+*/
 .dropdown-item {
-  color: #b0e0e6 !important;
-  transition: background 0.3s ease, color 0.3s ease;
-  padding: 0.75rem 1.5rem;
+  color: #b0e0e6 !important;      /* Color azul pálido */
+  transition: background 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  padding: 0.75rem 1.5rem;        /* Relleno (12px vertical, 24px horizontal) */
 }
 
+/*
+   Efecto hover en items del dropdown
+   Fondo y color cambian
+*/
 .dropdown-item:hover {
-  background: rgba(0, 242, 254, 0.15) !important;
-  color: #00f2fe !important;
+  background: rgba(0, 242, 254, 0.15) !important; /* Fondo cyan semi-transparente */
+  color: #00f2fe !important;      /* Texto cyan brillante */
 }
 
-/* Media Queries - Tablet */
+/* ========================================
+   FOOTER
+   ======================================== */
+/*
+   Pie de página con diseño flexible
+   Gradiente oscuro y borde superior
+*/
+footer {
+  display: flex;                  /* Flexbox para layout */
+  flex-direction: column;         /* Apilado vertical en móviles */
+  align-items: center;            /* Centra los elementos */
+  padding: 3rem 2rem;             /* Relleno generoso (48px vertical, 32px horizontal) */
+  text-align: center;             /* Centra el texto */
+  background: linear-gradient(180deg, rgba(15, 32, 39, 0.95) 0%, #0f2027 100%); /* Gradiente vertical oscuro */
+  color: #b0e0e6;                 /* Color azul pálido */
+  max-width: 100%;                /* Ancho máximo completo */
+  margin-top: 4rem;               /* Espacio superior (64px) */
+  border-top: 2px solid rgba(0, 242, 254, 0.3); /* Borde superior cyan */
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5); /* Sombra hacia arriba */
+}
+
+/*
+   Párrafos dentro del footer
+   Espaciado optimizado
+*/
+footer p {
+  color: #b0e0e6;                 /* Color azul pálido */
+  margin: 0.5rem 0;               /* Margen vertical (8px) */
+  font-size: 1rem;                /* Tamaño estándar (16px) */
+}
+
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+/*
+   Media Query para tablets (768px en adelante)
+   Ajustes de diseño para pantallas medianas
+*/
 @media (min-width: 768px) {
+  /* Aumenta tamaño de títulos */
   h1 {
-    font-size: 3rem;
+    font-size: 3rem;              /* 48px en tablets */
   }
 
   h2 {
-    font-size: 2.3rem;
+    font-size: 2.3rem;            /* 36.8px en tablets */
   }
 
+  /* Ajusta altura de imágenes en cards */
   .card-img-top {
-    height: 320px;
+    height: 320px;                /* Más alto en tablets */
   }
 
+  /* Cambia layout de imagen y aside a horizontal */
   .image-aside-container {
-    flex-direction: row;
-    gap: 3rem;
+    flex-direction: row;          /* Lado a lado en tablets */
+    gap: 3rem;                    /* Mayor separación (48px) */
   }
 
+  /* Ajusta ancho de imagen y aside */
   img {
-    max-width: 45%;
+    max-width: 45%;               /* Imagen ocupa 45% del ancho */
   }
 
   aside {
-    max-width: 50%;
+    max-width: 50%;               /* Aside ocupa 50% del ancho */
   }
 }
 
-/* Media Queries - Desktop */
+/*
+   Media Query para desktop (1024px en adelante)
+   Ajustes de diseño para pantallas grandes
+*/
 @media (min-width: 1024px) {
+  /* Títulos aún más grandes en desktop */
   h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem;            /* 56px en desktop */
   }
 
+  /* Aumenta padding de secciones */
   section {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem;           /* Mayor espaciado (48px vertical, 32px horizontal) */
   }
 
+  /* Imágenes de cards más altas */
   .card-img-top {
-    height: 350px;
+    height: 350px;                /* Máxima altura en desktop */
   }
 
+  /* Footer con layout horizontal */
   footer {
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row;          /* Elementos lado a lado */
+    justify-content: space-around; /* Distribuye el espacio uniformemente */
   }
 }
